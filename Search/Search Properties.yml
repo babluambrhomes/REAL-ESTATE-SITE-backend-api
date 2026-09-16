@@ -1,0 +1,22 @@
+info:
+  name: Search Properties
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/v1/search/properties?page=1&limit=10&q=2bhk%20apartment&lat=19.076&lng=72.8777&radiusKm=10&transactionType=SALE&propertyType=APARTMENT&city=Mumbai&minPrice=5000000&maxPrice=20000000&bedrooms=2&bathrooms=2&furnishingStatus=SEMI_FURNISHED&availabilityStatus=READY_TO_MOVE&isFeatured=true&isVerified=true&sort=newest"
+  headers:
+    - name: Content-Type
+      value: application/json
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

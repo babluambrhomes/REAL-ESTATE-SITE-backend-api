@@ -1,0 +1,39 @@
+info:
+  name: Upload Document
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/sellers/kyc/documents"
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: Content-Type
+      value: multipart/form-data
+  body:
+    type: multipart-form
+    data:
+      - name: title
+        type: text
+        value: Address proof
+      - name: docType
+        type: text
+        value: OFFICE_ADDRESS_PROOF
+      - name: document
+        type: file
+        value:
+          - C:\Users\ADMIN\Downloads\office address certificate.webp
+        contentType: image/webp
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

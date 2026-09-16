@@ -1,0 +1,8 @@
+name: new_api_testing
+variables:
+  - name: baseUrl
+    value: http://localhost:5000
+  - name: accessToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhYzBkMDE4LTVkMTAtNGQxMy1hOGMzLTM4MDYwNDIwMjVlMCIsImlhdCI6MTc4ODk1MzE4NywiZXhwIjoxNzg5NTU3OTg3fQ.1LNGqcLQXwf4AQBnKnGR1Mer1E4GByvGJytkZKoIzMU
+  - name: refreshToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNmYwNWMwLTUxNzQtNDliMC1hY2Y3LWYzZjllNDVmZWU3YiIsImlhdCI6MTc4NzgxMjE4OSwiZXhwIjoxNzg5MTA4MTg5fQ.aXvM_TfU7msmo-VtWF5300GbOOO870FcP06rAEq_XhI

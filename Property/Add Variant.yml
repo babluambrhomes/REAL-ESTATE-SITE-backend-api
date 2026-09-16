@@ -1,0 +1,53 @@
+info:
+  name: Add Variant
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/properties/{{propertyId}}/variants"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "variantName": "4 BHK",
+        "bedrooms": 4,
+        "bathrooms": 4,
+        "balconies": 2,
+        "price": "16800000",
+        "mrpPrice": "18900000",
+        "pricePerSqft": "5700",
+        "totalArea": "2947",
+        "totalAreaUnit": "sqft",
+        "carpetArea": "2240",
+        "carpetAreaUnit": "sqft",
+        "floorNumber": 12,
+        "totalFloors": 18,
+        "availabilityStatus": "READY_TO_MOVE",
+        "possessionDate": "2026-12-31",
+        "isAvailable": true,
+        "inventoryCount": 2,
+        "furnishingStatus": "FURNISHED",
+        "furnishingItems": [
+          { "item": "AC", "count": 4 },
+          { "item": "Sofa", "count": 2 },
+          { "item": "Modular Kitchen", "count": 1 }
+        ],
+        "displayOrder": 3
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,45 @@
+opencollection: 1.0.0
+
+info:
+  name: API TESTING
+  description: Collection for testing all backend APIs of the Real Estate platform
+
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+  vars:
+    - name: baseUrl
+      value: http://localhost:5000
+    - name: accessToken
+      value: ""
+    - name: refreshToken
+      value: ""
+    - name: userId
+      value: ""
+    - name: sellerSlug
+      value: ""
+    - name: sellerCategoryId
+      value: ""
+    - name: kycDocumentId
+      value: ""
+    - name: propertyId
+      value: ""
+    - name: variantId
+      value: ""
+    - name: propertySlug
+      value: ""
+
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

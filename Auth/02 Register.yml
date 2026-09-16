@@ -1,0 +1,33 @@
+info:
+  name: 02 Register
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/auth/register"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |+
+      
+      {
+        "email": "babluambrhomes@gmail.com",
+        "password": "Test@123",
+        "firstName": "Rahul",
+        "lastName": "Sharma"
+      }
+
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

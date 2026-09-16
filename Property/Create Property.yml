@@ -1,0 +1,128 @@
+info:
+  name: Create Property
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/properties"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "title": "2 & 3 BHK Luxury Apartments in Powai, Mumbai",
+        "description": "Premium gated community apartments with world-class amenities, clubhouse, gym and landscaped gardens. Excellent connectivity to Western Express Highway and Metro.",
+        "transactionType": "SALE",
+        "propertyType": "APARTMENT",
+        "propertyStatus": "AVAILABLE",
+        "addressLine": "Lodha World Towers, Senapati Bapat Marg, Lower Parel",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "pincode": "400013",
+        "latitude": 19.076,
+        "longitude": 72.8777,
+        "googleMapLink": "https://maps.google.com/?q=Lower+Parel+Mumbai",
+        "ownershipType": "FREEHOLD",
+        "listedBy": "AGENT",
+        "ageOfProperty": 5,
+        "amenities": ["Swimming Pool", "Gym", "Clubhouse", "24x7 Security", "Lift", "Power Backup", "Car Parking", "Garden", "Children Play Area", "Jogging Track"],
+        "nearbyPlaces": ["Phoenix Palladium Mall", "Hinduja Hospital", "Lower Parel Railway Station", "High Street Phoenix"],
+        "societyInfo": {
+          "towers": 2,
+          "totalUnits": 320,
+          "landAreaAcres": 3.5,
+          "openSpacePercent": 60,
+          "yearsOfTrust": 6
+        },
+        "videoUrl": "https://www.youtube.com/watch?v=example123",
+        "virtualTourUrl": "https://example.com/tour/lower-parel",
+        "reraNumber": "P51800012345",
+        "registrationNumber": "LODHA/REG/2021/001",
+        "taxAssessment": "Annual value 1200000",
+        "encumbrance": "No encumbrance. Clear title with society NOC.",
+        "contactName": "Rajesh Sharma",
+        "contactPhone": "9876543210",
+        "contactEmail": "rajesh.sharma@sharmarealty.example.com",
+        "metaTitle": "2 & 3 BHK Apartments for Sale in Lower Parel Mumbai",
+        "metaDescription": "Buy premium 2 & 3 BHK apartments in Lower Parel, Mumbai. Gated community with world-class amenities. Starting at 85 Lakhs.",
+        "metaKeywords": "2 BHK Lower Parel, 3 BHK Mumbai, apartments for sale, Lodha World Towers",
+        "variants": [
+          {
+            "variantName": "2 BHK",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "balconies": 1,
+            "price": "8500000",
+            "mrpPrice": "9250000",
+            "pricePerSqft": "5500",
+            "totalArea": "1545",
+            "totalAreaUnit": "sqft",
+            "carpetArea": "1150",
+            "carpetAreaUnit": "sqft",
+            "superBuiltUpArea": "1545",
+            "superBuiltUpAreaUnit": "sqft",
+            "floorNumber": 5,
+            "totalFloors": 18,
+            "availabilityStatus": "READY_TO_MOVE",
+            "possessionDate": "2026-12-31",
+            "isAvailable": true,
+            "inventoryCount": 5,
+            "furnishingStatus": "SEMI_FURNISHED",
+            "furnishingItems": [
+              { "item": "AC", "count": 2 },
+              { "item": "Modular Kitchen", "count": 1 }
+            ],
+            "images": [
+              { "url": "/uploads/property/sample-2bhk-living-room.webp", "isFeatured": true }
+            ],
+            "displayOrder": 1
+          },
+          {
+            "variantName": "3 BHK",
+            "bedrooms": 3,
+            "bathrooms": 3,
+            "balconies": 2,
+            "price": "12500000",
+            "mrpPrice": "13900000",
+            "pricePerSqft": "5600",
+            "totalArea": "2232",
+            "totalAreaUnit": "sqft",
+            "carpetArea": "1680",
+            "carpetAreaUnit": "sqft",
+            "superBuiltUpArea": "2232",
+            "superBuiltUpAreaUnit": "sqft",
+            "floorNumber": 9,
+            "totalFloors": 18,
+            "availabilityStatus": "READY_TO_MOVE",
+            "possessionDate": "2026-12-31",
+            "isAvailable": true,
+            "inventoryCount": 3,
+            "furnishingStatus": "SEMI_FURNISHED",
+            "furnishingItems": [
+              { "item": "AC", "count": 3 },
+              { "item": "Modular Kitchen", "count": 1 }
+            ],
+            "images": [
+              { "url": "/uploads/property/sample-3bhk-living-room.webp", "isFeatured": true }
+            ],
+            "displayOrder": 2
+          }
+        ]
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

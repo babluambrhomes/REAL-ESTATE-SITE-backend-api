@@ -1,0 +1,57 @@
+info:
+  name: Update My Profile
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/v1/sellers/me"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Sharma Realty",
+        "organization": {
+          "name": "Sharma Realty Pvt Ltd",
+          "description": "Trusted real estate agency in Mumbai",
+          "website": "https://sharmarealty.example.com",
+          "registrationNumber": "U45200MH2020PTC123456",
+          "gstNumber": "27ABCDE1234F1Z5",
+          "yearEstablished": 2012,
+          "employeeCount": 55
+        },
+        "panNumber": "ABCDE1234F",
+        "reraNumber": "RERA123456",
+        "headline": "Premium property consultants in Mumbai",
+        "about": "We help clients buy, sell and rent premium residential and commercial properties.",
+        "experienceYears": 13,
+        "specializations": ["Residential", "Commercial", "Luxury", "Land"],
+        "languages": ["English", "Hindi", "Marathi"],
+        "addressLine": "403, Sun City, Andheri West",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "pincode": "400053",
+        "contactPhone": "9876543210",
+        "contactEmail": "contact@sharmarealty.example.com",
+        "showContactToBuyers": true,
+        "isAvailable": true,
+        "happyClientsCount": 520,
+        "responseTimeMinutes": 25
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

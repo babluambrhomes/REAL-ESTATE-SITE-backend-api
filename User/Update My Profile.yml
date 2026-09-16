@@ -1,0 +1,33 @@
+info:
+  name: Update My Profile
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/v1/users/profile"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+       
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "addressLine":"west grater noida",
+        "gender":"MALE",
+        "pincode":"201302",
+        "dateOfBirth":"2004-01-02T00:00:00.000Z"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

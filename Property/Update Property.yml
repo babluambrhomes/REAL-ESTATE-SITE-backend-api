@@ -1,0 +1,37 @@
+info:
+  name: Update Property
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/properties/{{propertyId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "title": "2 & 3 BHK Luxury Apartments in Lower Parel, Mumbai",
+        "description": "Premium gated community apartments with clubhouse, gym and landscaped gardens. Now with an upgraded kids play area.",
+        "propertyStatus": "AVAILABLE",
+        "ageOfProperty": 6,
+        "amenities": ["Swimming Pool", "Gym", "Clubhouse", "24x7 Security", "Lift", "Power Backup", "Car Parking", "Garden", "Children Play Area", "Jogging Track", "CCTV Surveillance"],
+        "contactName": "Rajesh Sharma",
+        "contactPhone": "9876543210",
+        "metaTitle": "2 & 3 BHK Apartments for Sale in Lower Parel Mumbai - Updated"
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

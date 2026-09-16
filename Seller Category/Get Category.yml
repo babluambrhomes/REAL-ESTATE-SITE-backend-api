@@ -1,0 +1,27 @@
+info:
+  name: Get Category
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/v1/seller-categories/{{sellerCategoryId}}"
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: ""
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+    - name: sellerCategoryId
+      value: fc3c5e41-aa58-4e11-9f2d-31be42d7ac81
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

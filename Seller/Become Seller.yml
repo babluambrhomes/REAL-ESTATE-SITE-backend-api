@@ -1,0 +1,58 @@
+info:
+  name: Become Seller
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/sellers/become-seller"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "sellerType": "ORGANIZATION",
+        "organization": {
+          "name": "Sharma Realty Pvt Ltd",
+          "description": "Trusted real estate agency in Mumbai",
+          "website": "https://sharmarealty.example.com",
+          "registrationNumber": "U45200MH2020PTC123456",
+          "gstNumber": "27ABCDE1234F1Z5",
+          "yearEstablished": 2012,
+          "employeeCount": 50
+        },
+        "panNumber": "ABCDE1234F",
+        "reraNumber": "RERA123456",
+        "headline": "Premium property consultants in Mumbai",
+        "about": "We help clients buy, sell and rent premium residential and commercial properties.",
+        "experienceYears": 12,
+        "specializations": ["Residential", "Commercial", "Luxury"],
+        "languages": ["English", "Hindi", "Marathi"],
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "country": "India",
+        "pincode": "400053",
+        "contactPhone": "9876543210",
+        "contactEmail": "contact@sharmarealty.example.com",
+        "showContactToBuyers": true,
+        "isAvailable": true,
+        "happyClientsCount": 500,
+        "responseTimeMinutes": 30,
+        "categoryId":"1292f475-09ee-44a7-8ddb-7f4b6dfdba04"
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
