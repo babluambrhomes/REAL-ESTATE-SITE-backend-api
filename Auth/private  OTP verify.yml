@@ -15,8 +15,8 @@ http:
     type: json
     data: |-
       {
-        "code": "254589",
-        "purpose": "PHONE_VERIFICATION" 
+        "code": "858066",
+        "purpose": "EMAIL_VERIFICATION" 
       }
 
 runtime:

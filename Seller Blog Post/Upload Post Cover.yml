@@ -1,0 +1,32 @@
+info:
+  name: Upload Post Cover
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/v1/sellers/me/blog-posts/{{blogPostId}}/cover"
+  headers:
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: x-organization-id
+      value: "{{organizationId}}"
+  body:
+    type: multipart-form
+    data:
+      - name: cover
+        type: file
+        value: []
+        contentType: image/jpeg
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

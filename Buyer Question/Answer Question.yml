@@ -1,0 +1,33 @@
+info:
+  name: Answer Question
+  type: http
+  seq: 9
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/buyer-questions/seller/{{buyerQuestionId}}/answer"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: x-organization-id
+      value: "{{organizationId}}"
+  body:
+    type: json
+    data: |-
+      {
+        "answer": "The 3 BHK at 1.25Cr is negotiable up to 3 percent for a confirmed booking this month. The quoted price covers the unit only. Clubhouse membership is 1.5L one-time and covered parking is 8L, both charged separately at registry."
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

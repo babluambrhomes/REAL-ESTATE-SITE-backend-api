@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/api/v1/properties/admin?page=1&limit=10&propertyStatus=AVAILABLE&isVerified=false&isActive=true"
+  url: "{{baseUrl}}/api/v1/properties/admin?page=1&limit=10&propertyStatus=AVAILABLE&listingStatus=PUBLISHED&verificationStatus=PENDING&organizationId={{organizationId}}"
   headers:
     - name: Content-Type
       value: application/json

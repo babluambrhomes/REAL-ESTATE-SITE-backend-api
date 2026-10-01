@@ -1,0 +1,37 @@
+info:
+  name: Create Inquiry
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/organizations/{{organizationId}}/inquiries"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Ravi Kumar",
+        "email": "ravi.kumar@example.com",
+        "phone": "9812345678",
+        "budgetRange": "85L - 1.2Cr",
+        "preferredProject": "2 or 3 BHK in Lower Parel or Worli, ready to move",
+        "message": "We are relocating from Dubai in January and want a ready-to-move 3 BHK with clubhouse. Please share options and the registration cost breakdown.",
+        "termsAccepted": true
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

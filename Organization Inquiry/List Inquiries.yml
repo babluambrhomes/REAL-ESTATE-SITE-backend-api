@@ -1,0 +1,25 @@
+info:
+  name: List Inquiries
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/v1/organizations/{{organizationId}}/inquiries/me?page=1&limit=20&status=NEW&source=ENQUIRY_FORM"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -1,0 +1,31 @@
+info:
+  name: Update Inquiry Comment
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/v1/organizations/{{organizationId}}/inquiries/me/{{inquiryId}}/comment"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "comment": "Budget confirmed at 1.1Cr. Sending three shortlisted projects in Worli. Buyer wants to shortlist after a site visit next week."
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

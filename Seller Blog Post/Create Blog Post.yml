@@ -1,0 +1,42 @@
+info:
+  name: Create Blog Post
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/sellers/me/blog-posts"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: x-organization-id
+      value: "{{organizationId}}"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Five things to check before you pay the booking amount in Mumbai",
+        "excerpt": "The booking amount is the most irreversible money you will spend on a flat. Here is the checklist our team walks every buyer through before they pay a rupee.",
+        "content": "Buying a home in Mumbai is stressful, and the booking amount is the point of no return. After helping more than five hundred buyers, these are the five checks we insist on before any client pays a booking amount.\n\n## 1. RERA registration number\n\nIf the project is not registered with MahaRERA, walk away. Every legitimate new launch has a registration number, and you can verify it on the public RERA portal in under two minutes. A broker who cannot produce it is not a broker, they are a problem.\n\n## 2. Title chain, not just a brochure\n\nAsk for the last twenty years of the title chain. One clean link is not enough. Look for a bank sanction letter, a previous sale deed, and the latest property tax receipt all naming the same seller. Gaps in the chain are where disputes live.\n\n## 3. Encumbrance certificate\n\nThis is the document that tells you whether anyone else has a claim on the property. An encumbrance certificate covering the last thirteen years is the minimum you should accept. Read it, do not just accept it.\n\n## 4. Society NOC before you commit\n\nMany societies refuse NOCs to new buyers for years. Get written confirmation from the society that your purchase will be approved before you pay the deposit, not after.\n\n## 5. What exactly is included in the price\n\nThe quoted rate is almost never the final cost. Stamp duty, registration, GST on under-construction units, clubhouse membership, parking and monthly maintenance are all separate. Ask for an all-inclusive number. The gap between the two figures surprises most first-time buyers.",
+        "images": [
+          "https://images.example.com/blog/mumbai-booking-checklist-cover.jpg"
+        ],
+        "tags": ["Mumbai", "Home Buying", "RERA", "Due Diligence"],
+        "metaTitle": "5 Checks Before Paying Booking Amount in Mumbai",
+        "metaDescription": "A practical checklist covering RERA, title chain, encumbrance, society NOC and hidden costs before you pay a booking amount in Mumbai.",
+        "metaKeywords": "Mumbai property, booking amount, RERA verified, title check, encumbrance certificate, home buying guide"
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

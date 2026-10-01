@@ -1,0 +1,37 @@
+info:
+  name: Update Blog Post
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/sellers/me/blog-posts/{{blogPostId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: x-organization-id
+      value: "{{organizationId}}"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Six things to check before you pay the booking amount in Mumbai",
+        "excerpt": "The booking amount is the most irreversible money you will spend on a flat. Here is the six-point checklist our team walks every buyer through before they pay a rupee.",
+        "tags": ["Mumbai", "Home Buying", "RERA", "Due Diligence", "Registration"],
+        "metaTitle": "6 Checks Before Paying Booking Amount in Mumbai",
+        "metaDescription": "A practical checklist covering RERA, title chain, encumbrance, society NOC, approved plan and hidden costs before you pay a booking amount in Mumbai."
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

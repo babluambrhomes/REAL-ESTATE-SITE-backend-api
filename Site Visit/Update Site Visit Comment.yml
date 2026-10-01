@@ -1,0 +1,33 @@
+info:
+  name: Update Site Visit Comment
+  type: http
+  seq: 11
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/v1/site-visits/seller/{{siteVisitId}}/comment"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: x-organization-id
+      value: "{{organizationId}}"
+  body:
+    type: json
+    data: |-
+      {
+        "comment": "Buyer liked the 3 BHK layout and the clubhouse. Discussed price, asked for a 4 percent discount. Follow up on Monday after their family discussion."
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

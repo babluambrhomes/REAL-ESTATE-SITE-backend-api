@@ -24,7 +24,11 @@ config:
       value: ""
     - name: userId
       value: ""
+    - name: sellerId
+      value: ""
     - name: sellerSlug
+      value: ""
+    - name: sellerFaqId
       value: ""
     - name: sellerCategoryId
       value: ""
@@ -35,6 +39,30 @@ config:
     - name: variantId
       value: ""
     - name: propertySlug
+      value: ""
+    - name: propertyFaqId
+      value: ""
+    - name: organizationId
+      value: ""
+    - name: memberId
+      value: ""
+    - name: roleId
+      value: ""
+    - name: invitationId
+      value: ""
+    - name: invitationToken
+      value: ""
+    - name: inquiryId
+      value: ""
+    - name: leadId
+      value: ""
+    - name: siteVisitId
+      value: ""
+    - name: buyerQuestionId
+      value: ""
+    - name: blogPostId
+      value: ""
+    - name: blogPostSlug
       value: ""
 
 bundled: false

@@ -1,0 +1,33 @@
+info:
+  name: Update Lead Comment
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/v1/leads/me/{{leadId}}/comment"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+    - name: x-organization-id
+      value: "{{organizationId}}"
+  body:
+    type: json
+    data: |-
+      {
+        "comment": "Called the buyer. He is shortlisting between the 2 BHK and 3 BHK variants. Sending the brochure and floor plan over WhatsApp. Site visit requested for Saturday morning."
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

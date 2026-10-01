@@ -3,6 +3,48 @@ variables:
   - name: baseUrl
     value: http://localhost:5000
   - name: accessToken
-    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVhYzBkMDE4LTVkMTAtNGQxMy1hOGMzLTM4MDYwNDIwMjVlMCIsImlhdCI6MTc4ODk1MzE4NywiZXhwIjoxNzg5NTU3OTg3fQ.1LNGqcLQXwf4AQBnKnGR1Mer1E4GByvGJytkZKoIzMU
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmNGI2NzJiLTgyY2ItNGU3YS1iMGMyLWFiYjM2MTdjZmY0YiIsImlhdCI6MTc5MDMxNTEzNSwiZXhwIjoxNzkwOTE5OTM1fQ.nrXJuKGFJhsNNVC9uu4VhGieTiIFGphcV_j7_mf3CQ4
   - name: refreshToken
     value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNmYwNWMwLTUxNzQtNDliMC1hY2Y3LWYzZjllNDVmZWU3YiIsImlhdCI6MTc4NzgxMjE4OSwiZXhwIjoxNzg5MTA4MTg5fQ.aXvM_TfU7msmo-VtWF5300GbOOO870FcP06rAEq_XhI
+  - name: userId
+    value: ""
+  - name: sellerId
+    value: ""
+  - name: sellerSlug
+    value: ""
+  - name: sellerFaqId
+    value: ""
+  - name: sellerCategoryId
+    value: ""
+  - name: kycDocumentId
+    value: ""
+  - name: propertyId
+    value: ""
+  - name: variantId
+    value: ""
+  - name: propertySlug
+    value: ""
+  - name: propertyFaqId
+    value: ""
+  - name: organizationId
+    value: ""
+  - name: memberId
+    value: ""
+  - name: roleId
+    value: ""
+  - name: invitationId
+    value: ""
+  - name: invitationToken
+    value: ""
+  - name: inquiryId
+    value: ""
+  - name: leadId
+    value: ""
+  - name: siteVisitId
+    value: ""
+  - name: buyerQuestionId
+    value: ""
+  - name: blogPostId
+    value: ""
+  - name: blogPostSlug
+    value: ""

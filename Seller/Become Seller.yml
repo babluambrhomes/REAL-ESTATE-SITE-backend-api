@@ -15,34 +15,27 @@ http:
     type: json
     data: |-
       {
-        "sellerType": "ORGANIZATION",
-        "organization": {
-          "name": "Sharma Realty Pvt Ltd",
-          "description": "Trusted real estate agency in Mumbai",
-          "website": "https://sharmarealty.example.com",
-          "registrationNumber": "U45200MH2020PTC123456",
-          "gstNumber": "27ABCDE1234F1Z5",
-          "yearEstablished": 2012,
-          "employeeCount": 50
-        },
+        "name": "Amit Sharma",
+        "categoryId": "{{sellerCategoryId}}",
         "panNumber": "ABCDE1234F",
-        "reraNumber": "RERA123456",
-        "headline": "Premium property consultants in Mumbai",
-        "about": "We help clients buy, sell and rent premium residential and commercial properties.",
+        "aadhaarNumber": "1234 5678 9012",
+        "reraNumber": "A51900012345",
+        "headline": "Premium property consultant in Mumbai",
+        "about": "I help buyers find and negotiate premium residential and commercial properties across Mumbai. Fifteen years of experience with RERA verified projects only.",
         "experienceYears": 12,
         "specializations": ["Residential", "Commercial", "Luxury"],
         "languages": ["English", "Hindi", "Marathi"],
+        "addressLine": "403, Sun City, Andheri West",
         "city": "Mumbai",
         "state": "Maharashtra",
         "country": "India",
         "pincode": "400053",
         "contactPhone": "9876543210",
-        "contactEmail": "contact@sharmarealty.example.com",
+        "contactEmail": "amit.sharma@example.com",
         "showContactToBuyers": true,
         "isAvailable": true,
-        "happyClientsCount": 500,
-        "responseTimeMinutes": 30,
-        "categoryId":"1292f475-09ee-44a7-8ddb-7f4b6dfdba04"
+        "happyClientsCount": 180,
+        "responseTimeMinutes": 30
       }
 
 runtime:

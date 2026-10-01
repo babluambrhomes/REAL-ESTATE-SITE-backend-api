@@ -1,0 +1,40 @@
+info:
+  name: Book Site Visit
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/site-visits"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "sellerId": "{{sellerId}}",
+        "propertyId": "{{propertyId}}",
+        "name": "Ravi Kumar",
+        "email": "ravi.kumar@example.com",
+        "phone": "9812345678",
+        "message": "Would like to visit the property with my wife this Saturday morning.",
+        "userAddress": "402, Sun Residency, Andheri West, Mumbai 400053",
+        "visitDate": "2026-11-20",
+        "startTime": "2026-11-20T10:30:00.000Z",
+        "endTime": "2026-11-20T11:30:00.000Z"
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

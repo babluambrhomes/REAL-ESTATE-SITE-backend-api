@@ -16,7 +16,7 @@ http:
     data:
       - name: title
         type: text
-        value: Address proof
+        value: office address
       - name: docType
         type: text
         value: OFFICE_ADDRESS_PROOF

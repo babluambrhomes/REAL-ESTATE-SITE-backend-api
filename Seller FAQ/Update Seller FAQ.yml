@@ -1,0 +1,34 @@
+info:
+  name: Update Seller FAQ
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/sellers/me/faqs/{{sellerFaqId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "question": "Do you charge brokerage on rental properties?",
+        "answer": "Yes, for rentals we charge one month of rent as brokerage from the tenant. The amount is always disclosed in writing before you sign the agreement, and we do not charge any hidden admin or paper fees.",
+        "displayOrder": 1,
+        "isActive": true
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

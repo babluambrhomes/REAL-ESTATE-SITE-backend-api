@@ -1,12 +1,14 @@
 info:
   name: Delete Category
   type: http
-  seq: 5
+  seq: 8
 
 http:
   method: DELETE
   url: "{{baseUrl}}/api/v1/seller-categories/{{sellerCategoryId}}"
   headers:
+    - name: Content-Type
+      value: application/json
     - name: Authorization
       value: Bearer {{accessToken}}
   body:
@@ -23,3 +25,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true

@@ -18,7 +18,7 @@ runtime:
     - name: baseUrl
       value: http://localhost:5000
     - name: kycDocumentId
-      value: 246f951d-d0b1-445e-b6c8-f6948c7e772e
+      value: 95000cad-80bb-4366-ae0c-0c4d3bf1cc27
 
 settings:
   encodeUrl: true

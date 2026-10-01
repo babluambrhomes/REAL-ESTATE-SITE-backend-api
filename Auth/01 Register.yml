@@ -14,7 +14,7 @@ http:
     data: |
       
       {
-        "phone": "9870000003",
+        "phone": "9870000002",
         "firstName": "Amit Sharma"
       }
 

@@ -1,0 +1,34 @@
+info:
+  name: Update Property FAQ
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/property-faqs/{{propertyFaqId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "question": "Is the maintenance charge included in the quoted price?",
+        "answer": "No. The quoted price is the bare unit cost. Monthly maintenance is charged separately by the society and currently ranges from 3.5 to 5.5 rupees per sqft depending on tower and floor. One-time clubhouse and parking charges are also separate.",
+        "displayOrder": 1,
+        "isActive": true
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

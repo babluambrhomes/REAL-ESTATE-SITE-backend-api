@@ -15,7 +15,7 @@ http:
     type: json
     data: |+
       {
-        "email": "amit.seller@test.com"
+        "phone": "8758657"
       }
 
 settings:

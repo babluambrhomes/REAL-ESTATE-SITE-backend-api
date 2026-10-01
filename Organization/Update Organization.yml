@@ -1,0 +1,36 @@
+info:
+  name: Update Organization
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/v1/organizations/{{organizationId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Sharma Realty Private Limited",
+        "headline": "Trusted real estate consultants in Mumbai and Pune",
+        "about": "We help clients buy, sell and rent premium residential and commercial properties across Mumbai and Pune. Our team handles shortlisting, site visits, negotiation and registry end to end.",
+        "employeeCount": 62,
+        "responseTimeMinutes": 20,
+        "isAvailable": true
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

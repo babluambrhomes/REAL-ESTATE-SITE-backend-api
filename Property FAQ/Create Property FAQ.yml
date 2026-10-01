@@ -1,0 +1,35 @@
+info:
+  name: Create Property FAQ
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/v1/property-faqs"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{accessToken}}
+  body:
+    type: json
+    data: |-
+      {
+        "propertyId": "{{propertyId}}",
+        "question": "Is the maintenance charge included in the quoted price?",
+        "answer": "No. The quoted price is the bare unit cost. Monthly maintenance is charged separately by the society and typically ranges from 3.5 to 5.5 rupees per sqft depending on the tower and floor. The exact current figure is shared with the buyer during the site visit.",
+        "displayOrder": 1,
+        "isActive": true
+      }
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://localhost:5000
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
